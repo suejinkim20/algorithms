@@ -12,7 +12,8 @@ function anagrams(stringA, stringB) {
     const charMapA = {}
     const charMapB = {}
     
-    const regStringA = stringA.replace()
+    // const regStringA = stringA.replace()
+    
     for (let char of stringA) {
         charMapA[char] = charMapA[char] + 1 || 1
     }
