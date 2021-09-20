@@ -12,25 +12,34 @@ function anagrams(stringA, stringB) {
     const charMapA = {}
     const charMapB = {}
     
-    // const regStringA = stringA.replace()
-    
-    for (let char of stringA) {
+    const regStringA = stringA.replace(/[^\w]/g, "").toLowerCase()
+    const regStringB = stringB.replace(/[^\w]/g, "").toLowerCase()
+
+    for (let char of regStringA) {
         charMapA[char] = charMapA[char] + 1 || 1
     }
     
-    for (let char of stringB) {
+    for (let char of regStringB) {
         charMapB[char] = charMapB[char] + 1 || 1
     }
+    // console.log(regStringA)
+    // console.log(regStringB)
     
-    if (stringA.length !== stringB.length) {
-        console.log(false)
-        return
-    } else {
-        console.log(true)
+    if (regStringA.length !== regStringB.length) {
+        return false
+    } 
+
+    for (let char in charMapA){
+        if (charMapA[char] === charMapB[char]) {
+            console.log(char)
+            console.log(charMapA[char])
+            console.log(charMapB[char])
+            return true
+        } else {
+            return false
+        }
     }
-    
-    console.log(charMapB)
-    }
+}
     
     anagrams('hihi', 'byebye')
     
