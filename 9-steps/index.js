@@ -20,14 +20,21 @@
 function steps(n) {
     for (let i = 0; i < n; i++) {
         let line = []
-        for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
             const hash = '#'
-            line.push(hash)
+            const space = ' '
+            if (j <= i) {
+                line.push(hash)
+            } else {
+                line.push(space)
+            }
         }
-        console.log(line)
+        const stair = line.join('')
+        console.log(stair)
     }
     
 
 }
 steps(3)
+
 module.exports = steps;
