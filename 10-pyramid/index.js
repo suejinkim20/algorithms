@@ -14,6 +14,27 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    // How do you deal with even and odd stairs?
+
+    for (let i = 0; i < n; i++) {
+        let line = []
+        for (let j = 0; j < n; j++) {
+            const hash = '#'
+            const space = ' '
+            if (j <= i) {
+                line.push(hash)
+            } else {
+                line.unshift(space)
+                line.push(space)
+            }
+
+        }
+        console.log(line)
+        const stair = line.join('')
+        // console.log(stair)
+    }
+
+}
 
 module.exports = pyramid;
